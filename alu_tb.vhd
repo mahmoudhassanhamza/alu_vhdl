@@ -3,6 +3,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_arith.all;
 use ieee.std_logic_signed.all;
+use work.print.all;
 entity alu_tb is 
 end alu_tb;
 
@@ -41,7 +42,7 @@ begin
   b <= conv_std_logic_vector(B_values(j),3);
   op <= conv_std_logic_vector(op_values(i),3);
   wait for 1 ns;
-  assert (o_f = '1') report "We have an overflow " severity note;
+  assert (o_f = '0') report "We have an overflow " & print_number(a) & "+" & print_number(b) & "=" & print_number(sum) severity note; 
   wait for 9 ns;
 
   end loop;
