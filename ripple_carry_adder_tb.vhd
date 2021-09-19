@@ -12,10 +12,10 @@ architecture test of ripple_carry_adder_tb is
 
 
 component ripple_carry_adder is 
-  Generic(N : integer := 3);
+  --Generic(N : integer := 3);
   port(
-    A , B    : in   std_logic_vector(N-1 downto 0);
-    sum      : out  std_logic_vector(N-1 downto 0)
+    A , B    : in   std_logic_vector(2 downto 0);
+    sum      : out  std_logic_vector(2 downto 0)
   );
   
 end component;
